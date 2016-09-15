@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var hashStatusLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +22,12 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func onButtonPress(sender: UIButton) {
+        let title = sender.titleForState(.Normal)!
+        
+        hashStatusLabel.text = "\(title)ed"
+        
+    }
 
 }
 
