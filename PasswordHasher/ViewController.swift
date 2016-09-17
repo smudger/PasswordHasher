@@ -10,9 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var hashStatusLabel: UILabel!
+    // Label to send password to
+    @IBOutlet weak var pwdLabel: UILabel!
     
-    @IBOutlet weak var pwdInputField: UITextField!
+    // input text field for string to be hashed
+    @IBOutlet weak var textInputField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,18 +25,35 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    /*  onButtonPress
+     *
+     *  - function called when button is pressed using
+     *  'touch up inside' event
+     */
     @IBAction func onButtonPress(sender: UIButton) {
+        // remove first responder status for text field (closes software keyboard)
+        self.textInputField.resignFirstResponder()
+        
         let title = sender.titleForState(.Normal)!
         
-        if pwdInputField.hasText() {
-            let pwd = pwdInputField.text
+        if textInputField.hasText() {
+            let pwd = textInputField.text
             
-            hashStatusLabel.text = pwd
+            pwdLabel.text = pwd
         }
         else {
-            hashStatusLabel.text = "\(title)ed"
+            pwdLabel.text = "\(title)ed"
         }
+    }
+    
+    /* touchesBegan
+     *
+     * - function called when user touches the screen
+     */
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        // end editing of current view (closes software keyboard)
+        self.view.endEditing(true)
     }
 
 }
