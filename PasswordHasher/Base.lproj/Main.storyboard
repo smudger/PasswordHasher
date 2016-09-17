@@ -33,40 +33,39 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4rf-Xu-xsA">
-                                <rect key="frame" x="71" y="391" width="200" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="tFT-eO-1nv"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fV-ag-hve">
-                                <rect key="frame" x="506" y="391" width="36" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fV-ag-hve">
+                                <rect key="frame" x="544" y="391" width="36" height="30"/>
                                 <state key="normal" title="Hash"/>
                                 <connections>
                                     <action selector="onButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WJA-Ff-5iP"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sQ8-JJ-sGE">
+                                <rect key="frame" x="20" y="391" width="499" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="nbA-eo-xjZ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="0MU-EI-fcl"/>
-                            <constraint firstItem="4rf-Xu-xsA" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="371" id="0do-VS-pT4"/>
+                            <constraint firstItem="9fV-ag-hve" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="371" id="47w-bG-Jgk"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="sQ8-JJ-sGE" secondAttribute="leading" id="55H-5p-ngt"/>
                             <constraint firstItem="v5g-sO-jH6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="147" id="8VK-0m-Wbe"/>
                             <constraint firstItem="nbA-eo-xjZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Po8-3C-LsR"/>
-                            <constraint firstItem="9fV-ag-hve" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="371" id="RbV-Yy-LTM"/>
                             <constraint firstAttribute="bottomMargin" secondItem="nbA-eo-xjZ" secondAttribute="bottom" constant="-5" id="Rhs-kj-UoV"/>
                             <constraint firstItem="fgC-GV-XCJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RwI-aJ-fMH"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="9fV-ag-hve" secondAttribute="trailing" constant="38" id="Sxj-Ea-3Ri"/>
                             <constraint firstItem="fgC-GV-XCJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="42" id="a55-E2-gWx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9fV-ag-hve" secondAttribute="trailing" id="omQ-pE-OYW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="nbA-eo-xjZ" secondAttribute="trailing" constant="-20" id="onD-M0-A0Q"/>
-                            <constraint firstItem="4rf-Xu-xsA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="51" id="w9t-Wx-DBe"/>
+                            <constraint firstItem="9fV-ag-hve" firstAttribute="leading" secondItem="sQ8-JJ-sGE" secondAttribute="trailing" constant="25" id="rOs-0z-zTy"/>
+                            <constraint firstItem="sQ8-JJ-sGE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="371" id="slV-yO-uZU"/>
                             <constraint firstItem="v5g-sO-jH6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zpU-4l-UT9"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="hashStatusLabel" destination="v5g-sO-jH6" id="Uym-K8-voY"/>
+                        <outlet property="pwdInputField" destination="sQ8-JJ-sGE" id="3jG-da-mLo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

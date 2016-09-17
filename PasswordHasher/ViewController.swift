@@ -12,6 +12,8 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var hashStatusLabel: UILabel!
     
+    @IBOutlet weak var pwdInputField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -25,8 +27,14 @@ class ViewController: UIViewController {
     @IBAction func onButtonPress(sender: UIButton) {
         let title = sender.titleForState(.Normal)!
         
-        hashStatusLabel.text = "\(title)ed"
-        
+        if pwdInputField.hasText() {
+            let pwd = pwdInputField.text
+            
+            hashStatusLabel.text = pwd
+        }
+        else {
+            hashStatusLabel.text = "\(title)ed"
+        }
     }
 
 }
