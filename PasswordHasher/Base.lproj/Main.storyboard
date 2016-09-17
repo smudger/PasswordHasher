@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,20 +18,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blue_background" translatesAutoresizingMaskIntoConstraints="NO" id="nbA-eo-xjZ">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="605"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgC-GV-XCJ">
                                 <rect key="frame" x="248" y="62" width="104" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not Hashed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5g-sO-jH6">
-                                <rect key="frame" x="255" y="271" width="91" height="21"/>
+                                <rect key="frame" x="255" y="167" width="91" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4rf-Xu-xsA">
+                                <rect key="frame" x="71" y="391" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="tFT-eO-1nv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fV-ag-hve">
-                                <rect key="frame" x="282" y="366" width="36" height="30"/>
+                                <rect key="frame" x="506" y="391" width="36" height="30"/>
                                 <state key="normal" title="Hash"/>
                                 <connections>
                                     <action selector="onButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WJA-Ff-5iP"/>
@@ -39,12 +51,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="9fV-ag-hve" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="346" id="CAh-h5-lHW"/>
-                            <constraint firstItem="fgC-GV-XCJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EBX-bh-W5x"/>
-                            <constraint firstItem="v5g-sO-jH6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="R9g-ig-waS"/>
-                            <constraint firstItem="v5g-sO-jH6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="251" id="def-AX-psI"/>
-                            <constraint firstItem="fgC-GV-XCJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="42" id="dyR-3s-FuG"/>
-                            <constraint firstItem="9fV-ag-hve" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xdX-92-E1c"/>
+                            <constraint firstItem="nbA-eo-xjZ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="0MU-EI-fcl"/>
+                            <constraint firstItem="4rf-Xu-xsA" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="371" id="0do-VS-pT4"/>
+                            <constraint firstItem="v5g-sO-jH6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="147" id="8VK-0m-Wbe"/>
+                            <constraint firstItem="nbA-eo-xjZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Po8-3C-LsR"/>
+                            <constraint firstItem="9fV-ag-hve" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="371" id="RbV-Yy-LTM"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="nbA-eo-xjZ" secondAttribute="bottom" constant="-5" id="Rhs-kj-UoV"/>
+                            <constraint firstItem="fgC-GV-XCJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RwI-aJ-fMH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9fV-ag-hve" secondAttribute="trailing" constant="38" id="Sxj-Ea-3Ri"/>
+                            <constraint firstItem="fgC-GV-XCJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="42" id="a55-E2-gWx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nbA-eo-xjZ" secondAttribute="trailing" constant="-20" id="onD-M0-A0Q"/>
+                            <constraint firstItem="4rf-Xu-xsA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="51" id="w9t-Wx-DBe"/>
+                            <constraint firstItem="v5g-sO-jH6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zpU-4l-UT9"/>
                         </constraints>
                     </view>
                     <connections>
@@ -53,7 +71,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="388" y="315.5"/>
+            <point key="canvasLocation" x="388" y="315"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="blue_background" width="750" height="1334"/>
+    </resources>
 </document>
