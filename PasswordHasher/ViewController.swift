@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     // length of password to create
-    let PWD_LENGTH = 12
+    let PWD_LENGTH = 10
 
     // Label to send password to
     @IBOutlet weak var pwdLabel: UILabel!
@@ -43,16 +43,22 @@ class ViewController: UIViewController {
             let hashedString = sha512(textInputField.text!)
             
             // specify range of hashedString to select for password
-            let pwdRange = hashedString.startIndex..<hashedString.startIndex.advancedBy(PWD_LENGTH)
+            let pwdRange = hashedString.endIndex.advancedBy(-PWD_LENGTH)..<hashedString.endIndex
             
             // create password from hashedString using previous range
             let password = hashedString.substringWithRange(pwdRange)
             
-            //set label to password
-            pwdLabel.text = "\(password)"
-        }
-        else {
-            pwdLabel.text = "No Text To Hash :("
+            // test if password contains to alpha (a-z) characters
+            if containsTwoAlpha(password) {
+                // make even alpha chars upper-case
+                pwdLabel.text = evenToUpper(password)
+            // if not we will add one upper and one lower case character
+            } else {
+                var pwdCharArray = Array(password.characters)
+                pwdCharArray[0] = "d"
+                pwdCharArray[1] = "C"
+                pwdLabel.text = String(pwdCharArray)
+            }
         }
     }
     
@@ -63,6 +69,67 @@ class ViewController: UIViewController {
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         // end editing of current view (closes software keyboard)
         self.view.endEditing(true)
+    }
+    
+    /* containsAlpha
+     * 
+     * - function to test if a string contains two or more lower-case alpha character (a-z)
+     */
+    func containsTwoAlpha(testString: String) -> Bool {
+        // set containing all lower-case letters
+        let alphaChar = NSCharacterSet.lowercaseLetterCharacterSet()
+        // letter counter
+        var letterCount = 0
+
+        // iterate over characters in testString
+        for char in testString.unicodeScalars {
+            // if character is a lower-case alpha character increment counter
+            if alphaChar.longCharacterIsMember(char.value) {
+                letterCount += 1
+            }
+        }
+        
+        if letterCount >= 2 {
+            return true
+        }
+        else {
+            return false
+        }
+    }
+    
+    /* evenToUpper
+     *
+     * - function to make every other alpha character in a string upper-case
+     * - starts with second alpha character
+     */
+    func evenToUpper(lowerString: String) -> String {
+        // set containing all lower-case letters
+        let alphaChar = NSCharacterSet.lowercaseLetterCharacterSet()
+        // lower-case letter counter
+        var letterCount = 0
+        // set upperString to be lowerString
+        var upperString = lowerString
+        
+        // counter to record index of current char
+        var counter = 0
+        // iterate over chars in upperString
+        for char in upperString.unicodeScalars {
+            // if we have a alpha char
+            if alphaChar.longCharacterIsMember(char.value) {
+                // and we are on an even alpha char
+                if (letterCount % 2) == 1 {
+                    // get char array of upperString
+                    var charArray = Array(upperString.characters)
+                    // and make the current char upper-case
+                    charArray[counter] = Array(String(char).uppercaseString.characters)[0]
+                    // set upper string to this new char array
+                    upperString = String(charArray)
+                }
+                letterCount += 1
+            }
+            counter += 1
+        }
+        return upperString
     }
     
     /* sha512
