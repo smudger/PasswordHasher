@@ -46,7 +46,14 @@ class ViewController: UIViewController {
             let pwdRange = hashedString.endIndex.advancedBy(-PWD_LENGTH)..<hashedString.endIndex
             
             // create password from hashedString using previous range
-            let password = hashedString.substringWithRange(pwdRange)
+            var password = hashedString.substringWithRange(pwdRange)
+            
+            // ensure password contains at least one number char (0-9)
+            if !containsNumeric(password) {
+                var pwdCharArray = Array(password.characters)
+                pwdCharArray[2] = "3"
+                password = String(pwdCharArray)
+            }
             
             // test if password contains to alpha (a-z) characters
             if containsTwoAlpha(password) {
@@ -71,7 +78,26 @@ class ViewController: UIViewController {
         self.view.endEditing(true)
     }
     
-    /* containsAlpha
+    /* containsNumeric
+     *
+     * - function to test if a string contains a numeric (0-9) character
+     */
+    func containsNumeric(testString: String) -> Bool {
+        // set containing all lower-case letters
+        let numChar = NSCharacterSet.decimalDigitCharacterSet()        // letter counter
+        
+        // iterate over characters in testString
+        for char in testString.unicodeScalars {
+            // if character is a lower-case alpha character return true
+            if numChar.longCharacterIsMember(char.value) {
+                return true
+            }
+        }
+        
+        return false
+    }
+    
+    /* containsTwoAlpha
      * 
      * - function to test if a string contains two or more lower-case alpha character (a-z)
      */
