@@ -36,7 +36,7 @@ class ViewController: UIViewController {
      * - copies contents of pwdLabel to clipboard to be used in other apps
      */
     @IBAction func onCopyCall(sender: UIButton) {
-        
+        UIPasteboard.generalPasteboard().string = pwdLabel.text
     }
     
     /* onClearCall

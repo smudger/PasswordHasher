@@ -45,18 +45,18 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4D1-l9-sIh">
-                                <rect key="frame" x="282" y="297" width="36" height="30"/>
-                                <state key="normal" title="Clear"/>
-                                <connections>
-                                    <action selector="onClearCall:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UCZ-Ik-yaN"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLh-Xc-h1d">
                                 <rect key="frame" x="282" y="235" width="36" height="30"/>
                                 <state key="normal" title="Copy"/>
                                 <connections>
                                     <action selector="onCopyCall:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RQa-Zh-7jX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4D1-l9-sIh">
+                                <rect key="frame" x="282" y="297" width="36" height="30"/>
+                                <state key="normal" title="Clear"/>
+                                <connections>
+                                    <action selector="onClearCall:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UCZ-Ik-yaN"/>
                                 </connections>
                             </button>
                         </subviews>
