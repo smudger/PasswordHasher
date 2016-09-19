@@ -46,7 +46,7 @@ class ViewController: UIViewController {
      * - clears contents of pwdLabel
      */
     @IBAction func onClearCall(sender: UIButton) {
-        pwdLabel.text = "Cleared"
+        pwdLabel.text = ""
     }
     
     /*  onHashCall
