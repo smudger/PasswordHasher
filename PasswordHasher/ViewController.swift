@@ -29,12 +29,32 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    /*  onButtonPress
+    /* onCopyCall
+     * 
+     * - function called when 'copy' button is pressed using
+     *   'touch up inside' event
+     * - copies contents of pwdLabel to clipboard to be used in other apps
+     */
+    @IBAction func onCopyCall(sender: UIButton) {
+        
+    }
+    
+    /* onClearCall
      *
-     *  - function called when button is pressed using
+     * - function called when 'clear' button is pressed using
+     *   'touch up inside' event
+     * - clears contents of pwdLabel
+     */
+    @IBAction func onClearCall(sender: UIButton) {
+        
+    }
+    
+    /*  onHashCall
+     *
+     *  - function called when 'hash' button is pressed using
      *  'touch up inside' event
      */
-    @IBAction func onButtonPress(sender: UIButton) {
+    @IBAction func onHashCall(sender: UIButton) {
         // remove first responder status for text field (closes software keyboard)
         self.textInputField.resignFirstResponder()
         
