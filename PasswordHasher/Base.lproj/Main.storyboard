@@ -18,13 +18,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blue_background" translatesAutoresizingMaskIntoConstraints="NO" id="nbA-eo-xjZ">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="605"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgC-GV-XCJ">
                                 <rect key="frame" x="248" y="62" width="104" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fV-ag-hve">
@@ -42,16 +38,8 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not Hashed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5g-sO-jH6">
                                 <rect key="frame" x="255" y="167" width="91" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLh-Xc-h1d">
-                                <rect key="frame" x="282" y="235" width="36" height="30"/>
-                                <state key="normal" title="Copy"/>
-                                <connections>
-                                    <action selector="onCopyCall:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RQa-Zh-7jX"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4D1-l9-sIh">
                                 <rect key="frame" x="282" y="297" width="36" height="30"/>
                                 <state key="normal" title="Clear"/>
@@ -59,6 +47,18 @@
                                     <action selector="onClearCall:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UCZ-Ik-yaN"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLh-Xc-h1d">
+                                <rect key="frame" x="282" y="233" width="36" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="0.0" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Copy"/>
+                                <connections>
+                                    <action selector="onCopyCall:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jpb-DO-WDM"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nbA-eo-xjZ">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="605"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="0.0" colorSpace="calibratedRGB"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -77,7 +77,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="nbA-eo-xjZ" secondAttribute="trailing" constant="-20" id="onD-M0-A0Q"/>
                             <constraint firstItem="9fV-ag-hve" firstAttribute="leading" secondItem="sQ8-JJ-sGE" secondAttribute="trailing" constant="25" id="rOs-0z-zTy"/>
                             <constraint firstItem="sQ8-JJ-sGE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="371" id="slV-yO-uZU"/>
-                            <constraint firstItem="cLh-Xc-h1d" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="215" id="xYS-ug-O9E"/>
+                            <constraint firstItem="cLh-Xc-h1d" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="213" id="xYS-ug-O9E"/>
                             <constraint firstItem="v5g-sO-jH6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zpU-4l-UT9"/>
                         </constraints>
                     </view>
@@ -91,7 +91,4 @@
             <point key="canvasLocation" x="388" y="315"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="blue_background" width="750" height="1334"/>
-    </resources>
 </document>
