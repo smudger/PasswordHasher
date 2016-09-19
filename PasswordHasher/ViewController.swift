@@ -46,7 +46,7 @@ class ViewController: UIViewController {
      * - clears contents of pwdLabel
      */
     @IBAction func onClearCall(sender: UIButton) {
-        
+        pwdLabel.text = "Cleared"
     }
     
     /*  onHashCall
@@ -87,6 +87,8 @@ class ViewController: UIViewController {
                 pwdLabel.text = String(pwdCharArray)
             }
         }
+        // clear contents of text field
+        textInputField.text = ""
     }
     
     /* touchesBegan
