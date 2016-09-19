@@ -18,7 +18,7 @@
 /* Begin PBXFileReference section */
 		5C26C7AC1D8DDDC000F6D9EA /* PasswordHasher-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PasswordHasher-Bridging-Header.h"; sourceTree = "<group>"; };
 		5C4A349E1D904C0D001622EA /* PasswordButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordButton.swift; sourceTree = "<group>"; };
-		5CEEA5F31D8AAA5D0017CE7E /* PasswordHasher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PasswordHasher.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CEEA5F31D8AAA5D0017CE7E /* Hasher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hasher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CEEA5F61D8AAA600017CE7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CEEA5F81D8AAA600017CE7E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5CEEA5FB1D8AAA600017CE7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -50,7 +50,7 @@
 		5CEEA5F41D8AAA5D0017CE7E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5CEEA5F31D8AAA5D0017CE7E /* PasswordHasher.app */,
+				5CEEA5F31D8AAA5D0017CE7E /* Hasher.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -86,7 +86,7 @@
 			);
 			name = PasswordHasher;
 			productName = PasswordHasher;
-			productReference = 5CEEA5F31D8AAA5D0017CE7E /* PasswordHasher.app */;
+			productReference = 5CEEA5F31D8AAA5D0017CE7E /* Hasher.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -261,7 +261,7 @@
 				INFOPLIST_FILE = PasswordHasher/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.smudja.PasswordHasher;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Hasher;
 				SWIFT_OBJC_BRIDGING_HEADER = "PasswordHasher-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -276,7 +276,7 @@
 				INFOPLIST_FILE = PasswordHasher/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.smudja.PasswordHasher;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Hasher;
 				SWIFT_OBJC_BRIDGING_HEADER = "PasswordHasher-Bridging-Header.h";
 			};
 			name = Release;
