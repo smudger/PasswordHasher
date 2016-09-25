@@ -18,10 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nbA-eo-xjZ">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="605"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Hasher Beta!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgC-GV-XCJ">
                                 <rect key="frame" x="203" y="41" width="195" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -40,31 +36,45 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5g-sO-jH6">
-                                <rect key="frame" x="300" y="271" width="0.0" height="0.0"/>
+                                <rect key="frame" x="300" y="333" width="0.0" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="J4i-d2-UTY"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4D1-l9-sIh">
-                                <rect key="frame" x="71" y="267" width="139" height="30"/>
+                                <rect key="frame" x="124" y="333" width="36" height="30"/>
                                 <state key="normal" title="Clear"/>
                                 <connections>
                                     <action selector="onClearCall:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UCZ-Ik-yaN"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xhA-2N-7Kz">
-                                <rect key="frame" x="20" y="93" width="560" height="150"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">Before you use this app you will need to memorise a salt (basically a password) which will allow you to access the passwords for all your accounts.
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" delaysContentTouches="NO" keyboardDismissMode="interactive" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xhA-2N-7Kz">
+                                <rect key="frame" x="20" y="72" width="560" height="236"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
+                                <string key="text">Before you use this app you will need to memorise a salt (basically a password) which will allow you to access the passwords for all your accounts.
 Once this has been completed, simply type your salt followed by the name of the account (e.g. facebook, youtube, etc.) then click 'Hash' to display your password for that account. For first time setup, you will need to change your account passsword to that given by this app.
-The 'Copy' button copies the password to be pasted in other apps. The 'Clear' button clears the password from the screen.</mutableString>
+The 'Copy' button copies the password to be pasted in other apps. The 'Clear' button clears the password from the screen.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLh-Xc-h1d">
+                                <rect key="frame" x="440" y="333" width="36" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="0.0" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Copy"/>
+                                <connections>
+                                    <action selector="onCopyCall:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jpb-DO-WDM"/>
+                                </connections>
+                            </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="a3o-5Y-Awb">
-                                <rect key="frame" x="180" y="446" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="20" y="521" width="560" height="71"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="egw-mg-hnX"/>
+                                    <constraint firstAttribute="width" constant="560" id="egw-mg-hnX"/>
                                 </constraints>
                                 <string key="text">As a beta tester for this app, please report any bugs/issues or any suggested improvements on https://github.com/5mudg3r/PasswordHasher/issues. Thanks! :)
 I accept no responsibility for forgotten passwords as a result of using this app.</string>
@@ -72,45 +82,32 @@ I accept no responsibility for forgotten passwords as a result of using this app
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLh-Xc-h1d">
-                                <rect key="frame" x="390" y="267" width="145" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="0.0" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Copy"/>
-                                <connections>
-                                    <action selector="onCopyCall:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jpb-DO-WDM"/>
-                                </connections>
-                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="nbA-eo-xjZ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="0MU-EI-fcl"/>
-                            <constraint firstItem="9fV-ag-hve" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="371" id="47w-bG-Jgk"/>
-                            <constraint firstItem="a3o-5Y-Awb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4Xw-UO-weX"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="sQ8-JJ-sGE" secondAttribute="leading" id="55H-5p-ngt"/>
-                            <constraint firstItem="v5g-sO-jH6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="251" id="8VK-0m-Wbe"/>
-                            <constraint firstItem="xhA-2N-7Kz" firstAttribute="leading" secondItem="sQ8-JJ-sGE" secondAttribute="leading" id="I0X-kc-EsC"/>
-                            <constraint firstItem="xhA-2N-7Kz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KMN-ZJ-UB4"/>
-                            <constraint firstItem="cLh-Xc-h1d" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="162" id="NA7-Kt-CYt"/>
-                            <constraint firstItem="nbA-eo-xjZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Po8-3C-LsR"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="nbA-eo-xjZ" secondAttribute="bottom" constant="-5" id="Rhs-kj-UoV"/>
-                            <constraint firstItem="fgC-GV-XCJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RwI-aJ-fMH"/>
-                            <constraint firstItem="xhA-2N-7Kz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Vc5-4g-fqB"/>
-                            <constraint firstItem="xhA-2N-7Kz" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="WG0-hm-rTQ"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="a3o-5Y-Awb" secondAttribute="bottom" constant="26" id="Wjo-7Q-BRi"/>
-                            <constraint firstItem="v5g-sO-jH6" firstAttribute="leading" secondItem="4D1-l9-sIh" secondAttribute="trailing" constant="90" id="Xkr-wP-cvJ"/>
-                            <constraint firstItem="a3o-5Y-Awb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="426" id="a3Y-bi-LqM"/>
-                            <constraint firstItem="fgC-GV-XCJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="21" id="a55-E2-gWx"/>
-                            <constraint firstItem="4D1-l9-sIh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-160" id="ekb-dV-kOD"/>
-                            <constraint firstItem="4D1-l9-sIh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="247" id="f8R-MA-HnB"/>
-                            <constraint firstItem="cLh-Xc-h1d" firstAttribute="top" secondItem="xhA-2N-7Kz" secondAttribute="bottom" constant="24" id="moZ-n0-wJY"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="9fV-ag-hve" secondAttribute="trailing" id="omQ-pE-OYW"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="nbA-eo-xjZ" secondAttribute="trailing" constant="-20" id="onD-M0-A0Q"/>
-                            <constraint firstItem="xhA-2N-7Kz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="73" id="pkc-9T-J6U"/>
-                            <constraint firstItem="9fV-ag-hve" firstAttribute="leading" secondItem="sQ8-JJ-sGE" secondAttribute="trailing" constant="25" id="rOs-0z-zTy"/>
-                            <constraint firstItem="sQ8-JJ-sGE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="371" id="slV-yO-uZU"/>
-                            <constraint firstItem="cLh-Xc-h1d" firstAttribute="leading" secondItem="v5g-sO-jH6" secondAttribute="trailing" constant="90" id="xFL-H5-cpI"/>
-                            <constraint firstItem="cLh-Xc-h1d" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="247" id="xYS-ug-O9E"/>
-                            <constraint firstItem="v5g-sO-jH6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zpU-4l-UT9"/>
+                            <constraint firstItem="fgC-GV-XCJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="21" id="5UN-tG-cPJ"/>
+                            <constraint firstItem="xhA-2N-7Kz" firstAttribute="top" secondItem="fgC-GV-XCJ" secondAttribute="bottom" constant="10" id="7x9-Wh-h3H"/>
+                            <constraint firstItem="9fV-ag-hve" firstAttribute="leading" secondItem="sQ8-JJ-sGE" secondAttribute="trailing" constant="25" id="81v-a2-28Y"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="a3o-5Y-Awb" secondAttribute="trailing" id="9Cc-Y4-60l"/>
+                            <constraint firstItem="cLh-Xc-h1d" firstAttribute="top" secondItem="xhA-2N-7Kz" secondAttribute="bottom" constant="25" id="AL4-Rs-iTt"/>
+                            <constraint firstItem="a3o-5Y-Awb" firstAttribute="top" secondItem="sQ8-JJ-sGE" secondAttribute="bottom" constant="100" id="Ayu-Jx-HRz"/>
+                            <constraint firstItem="cLh-Xc-h1d" firstAttribute="leading" secondItem="4D1-l9-sIh" secondAttribute="trailing" constant="280" id="CRZ-HQ-aPv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9fV-ag-hve" secondAttribute="trailing" id="Ln1-Ir-Lsa"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="a3o-5Y-Awb" secondAttribute="bottom" constant="8" id="Mul-G1-G6H"/>
+                            <constraint firstItem="a3o-5Y-Awb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Nrw-CD-tQb"/>
+                            <constraint firstItem="4D1-l9-sIh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="313" id="NuN-4E-ehj"/>
+                            <constraint firstItem="fgC-GV-XCJ" firstAttribute="leading" secondItem="4D1-l9-sIh" secondAttribute="trailing" constant="43" id="Teo-pn-9gg"/>
+                            <constraint firstItem="xhA-2N-7Kz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TiG-t0-3H5"/>
+                            <constraint firstItem="sQ8-JJ-sGE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="371" id="ZeF-IW-jhe"/>
+                            <constraint firstItem="cLh-Xc-h1d" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="313" id="c1d-WD-gnK"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="sQ8-JJ-sGE" secondAttribute="leading" id="eqF-5g-yWE"/>
+                            <constraint firstItem="9fV-ag-hve" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="371" id="evx-g7-6pJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xhA-2N-7Kz" secondAttribute="trailing" id="gEO-3j-dYS"/>
+                            <constraint firstItem="fgC-GV-XCJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lTQ-3M-NId"/>
+                            <constraint firstItem="v5g-sO-jH6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lfb-0W-TWa"/>
+                            <constraint firstItem="a3o-5Y-Awb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="nI1-Ry-esM"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="xhA-2N-7Kz" secondAttribute="leading" id="oY3-YL-TIU"/>
+                            <constraint firstItem="v5g-sO-jH6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="313" id="s1a-ce-xM2"/>
                         </constraints>
                     </view>
                     <connections>
@@ -120,7 +117,7 @@ I accept no responsibility for forgotten passwords as a result of using this app
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="388" y="315"/>
+            <point key="canvasLocation" x="426" y="317"/>
         </scene>
     </scenes>
 </document>
