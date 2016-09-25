@@ -21,12 +21,17 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.enterForeground), name:UIApplicationDidEnterBackgroundNotification, object: nil)
         // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func enterForeground() {
+        self.pwdLabel.text=""
     }
     
     /* onCopyCall
