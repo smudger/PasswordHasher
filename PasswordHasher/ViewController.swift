@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // calls function in #selector() when we receive a UIApplicationDidEnterBackgroundNotification
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.enterForeground), name:UIApplicationDidEnterBackgroundNotification, object: nil)
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -30,6 +31,11 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    /* enterForeground
+     *
+     * - function called when we receive a UIApplicationDidEnterBackgroundNotification
+     * - setup in viewDidLoad()
+     */
     func enterForeground() {
         self.pwdLabel.text=""
     }
